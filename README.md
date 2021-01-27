@@ -8,7 +8,7 @@ The intent to create an Application that has no code interface is mainly for the
 
 # Screenshots
 
-![Application Mainpage](https://github.com/UTFR/Lap-Simulation-App/blob/main/homescreenshot.png)
+![Application Mainpage](https://github.com/UTFR/Lap-Simulation-App/blob/develop/homescreenshot.png)
 
 # Current Capabilities (v1.0)
 * 2D pseudo-bicycle model steady-state approach
