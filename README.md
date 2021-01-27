@@ -6,3 +6,13 @@ After intial analysis and fundemental engineering principles outline specific pa
 
 The intent to create an Application that has no code interface is mainly for the design leads within the UTFR organization to have a complete, working tool that they can trust will output sensible numbers and trends, while giving the Vehicle Dynamics team the opportunity to update the code in version releases without having to constantly share the entire source code by compiling it through MATLAB's App Designer. Previous team iterations on laptime code has been notoriously difficult to onboard new members with as the size and scope of the project without help pages or visual references makes the onboarding process much more difficult than necessary.
 
+# Screenshots
+
+![Application Mainpage](https://github.com/UTFR/Lap-Simulation-App/blob/main/homescreenshot.png)
+
+# Current Capabilities (v1.0)
+* 2D pseudo-bicycle model steady-state approach
+* Custom Tracks via corner/straight data
+* Custom 2D graph plotting of all relevant output parameters
+* Storable Car and Run data. Shareable and ingestable on any v1.0 application
+* loading and viewing of saved cars
