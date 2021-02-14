@@ -9,10 +9,12 @@ classdef TRACK
     end
     
     methods
-        function obj = TRACK(inputArg1,inputArg2)
+        function obj = TRACK(Tname, Tradius,Tlength)
             %TRACK Construct an instance of this class
             %   Detailed explanation goes here
-            obj.Property1 = inputArg1 + inputArg2;
+            obj.name = Tname;
+            obj.trackradius = Tradius;
+            obj.tracklength = Tlength;
         end
     end
 end
