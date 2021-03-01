@@ -2,17 +2,21 @@ classdef TRACK
     %TRACK Summary of this class goes here
     %   Detailed explanation goes here
     
+    % Track parameters
+    % Tracklength and trackradius: parallel lists.
     properties
-        name
-        trackradius
-        tracklength
+        name % Name of the track
+        trackradius % array of radiuses
+        tracklength % array of lengths
     end
     
     methods
-        function obj = TRACK(inputArg1,inputArg2)
+        function obj = TRACK(Tname, Tradius,Tlength)
             %TRACK Construct an instance of this class
             %   Detailed explanation goes here
-            obj.Property1 = inputArg1 + inputArg2;
+            obj.name = Tname;
+            obj.trackradius = Tradius;
+            obj.tracklength = Tlength;
         end
     end
 end
