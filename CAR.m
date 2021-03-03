@@ -21,6 +21,7 @@ classdef CAR
         cod             % Normalized Coefficient of Drag [-]
         col             % Normalized Coefficient of Lift [-]
         fa              % Frontal Area [m^2]
+        airden          % Air Density [kg/m^3]
         
         % Powertrain Parameters
         
@@ -66,7 +67,7 @@ classdef CAR
                            longtcf,wr,cod_base,col_base,fa,dreff,gears,...
                            maxrpm,ptconfig,pttype,airden,torquecurve,name)
             %CAR Creation Construct an instance of this class
-            
+            obj.airden = airden;
             obj.cogheight = cogheight;
             obj.frbb = frbb;
             obj.frstwd = frstwd;
@@ -90,12 +91,33 @@ classdef CAR
             obj.torquecurve = torquecurve;
             obj.name = name;
         end
-        
-        function obj = linearperf(obj)
-            % LINEPERF calls accel and decel f(x)'s to store data for
-            % further use.
-            
-            %[] = acceleration_calc(obj)
+
+        function obj = c_param(obj,value,inputp)
+            % Identify and change a parameter for a parameter sweep
+            switch value
+                case 1
+                    obj.mass = inputp;
+                case 2
+                    obj.track = inputp;
+                case 3
+                    obj.wb = inputp;
+                case 4
+                    obj.cogheight = inputp;
+                case 5
+                    obj.wd = inputp;
+                case 6
+                    obj.frbb = inputp;
+                case 7
+                    obj.lattcf = inputp;
+                case 8
+                    obj.longtcf = inputp;
+                case 9 
+                    obj.col = 0.5*obj.fa*obj.airden*inputp;
+                case 10
+                    obj.cod = 0.5*obj.fa*obj.airden*inputp;
+                case 11
+                    obj.gears(end) = inputp;
+            end
         end
     end
 end
