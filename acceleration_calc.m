@@ -82,6 +82,24 @@ function car = acceleration_calc(car)
         car.arpm = carrpm_output;
         car.agear = gear_output;
     end
+    if velocity >= max_velocity
+        timedelta = 100/max_velocity;
+        time_add = linspace(0,timedelta,10000) + car.atime(end);
+        dist_add = linspace(0,100,10000) + car.adist(end);
+        vel_add = zeros(1,10000)+ max_velocity;
+        accel_add = zeros(1,10000);
+        force_e_add = zeros(1,10000) + car.aforcee(end);
+        rpm_add = zeros(1,10000) + car.arpm(end);
+        gear_add = zeros(1,10000) + car.agear(end);
+        
+        car.atime = [car.atime,time_add];
+        car.adist = [car.adist,dist_add];
+        car.avel = [car.avel,vel_add];
+        car.aaccel = [car.aaccel,accel_add];
+        car.aforcee = [car.aforcee,force_e_add];
+        car.arpm = [car.arpm,rpm_add];
+        car.agear = [car.agear,gear_add];
+    end
 end
 
 
