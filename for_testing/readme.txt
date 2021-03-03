@@ -1,4 +1,4 @@
-UTFR_Laptime_Simulator Executable
+utfr_lapsim_main Executable
 
 1. Prerequisites for Deployment 
 
@@ -24,7 +24,7 @@ in the MathWorks Documentation Center.
 
 Files to Package for Standalone 
 ================================
--UTFR_Laptime_Simulator.exe
+-utfr_lapsim_main.exe
 -MCRInstaller.exe 
     Note: if end users are unable to download the MATLAB Runtime using the
     instructions in the previous section, include it when building your 
