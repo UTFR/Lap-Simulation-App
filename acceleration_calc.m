@@ -6,7 +6,7 @@ function car = acceleration_calc(car)
 
     velocity = 0;
     accel = 0;
-    min_velocity = cangvel(1000,"rpm")*car.wr*car.gearing(1);
+    min_velocity = cangvel(1000,"rpm")*car.wr/car.gearing(1);
     max_velocity = car.maxspeed;
 
     % Begin iterations
@@ -21,7 +21,7 @@ function car = acceleration_calc(car)
             wheelrpm = cangvel(velocity/car.wr,"rad/s");
             gear_index = find(car.sspeeds>velocity,1,'first');
             gear = car.gearing(gear_index);
-            gear_output(i) = find(car.gearing(gear));
+            gear_output(i) = find(car.gearing==gear);
             carrpm = wheelrpm*gear;
             carrpm_output(i) = carrpm;
             if mod(carrpm,1000) == 0

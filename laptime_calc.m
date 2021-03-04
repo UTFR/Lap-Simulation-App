@@ -84,8 +84,8 @@ function rundata = laptime_calc(app,car)
                 veldata(tindex:tindexnew) = [car.avel(aindex),car.dvel(dindex)];
                 alongdata(tindex:tindexnew) = [car.aaccel(aindex),car.daccel(dindex)];
                 alatdata(tindex:tindexnew) = zeros(totindexdelta,1);
-                rpmdata(1:totindexdelta) = [car.arpm(aindex),car.drpm(dindex)];
-                geardata(1:totindexdelta) = [car.agear(aindex),car.dgear(dindex)];
+                rpmdata(tindex:tindexnew) = [car.arpm(aindex),car.drpm(dindex)];
+                geardata(tindex:tindexnew) = [car.agear(aindex),car.dgear(dindex)];
                 tindex = tindexnew;
             else
                 % Add datapoints for corners
